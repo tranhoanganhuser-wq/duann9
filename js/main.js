@@ -39,28 +39,44 @@ $(document).ready(function() {
 });
 
 // Hàm chuyển trang
-function chuyenTrang(page) {
-    if (page === 1) {
-        // QUAN TRỌNG: Hiện 1 và phải ẨN 2
-        $("#row-page-1").show(); 
-        $("#row-page-2").hide(); 
-        
-        // Cập nhật trạng thái nút
-        $("#btn-page-1").addClass("active");
-        $("#btn-page-2").removeClass("active");
-    } else if (page === 2) {
-        // Ngược lại: ẨN 1 và HIỆN 2
-        $("#row-page-1").hide();
-        $("#row-page-2").show();
-        
-        // Cập nhật trạng thái nút
-        $("#btn-page-2").addClass("active");
-        $("#btn-page-1").removeClass("active");
+// Biến lưu trữ trang hiện tại
+let currentPage = 1;
+const totalPages = 2; // Tổng số trang của bạn là 2
+
+// Hàm chuyển trang được gán vào thẻ <a>
+window.changePage = function(page) {
+    // 1. Xác định trang mục tiêu
+    if (page === 'prev') {
+        if (currentPage > 1) currentPage--;
+    } else if (page === 'next') {
+        if (currentPage < totalPages) currentPage++;
+    } else {
+        currentPage = page; // Bấm trực tiếp vào số 1 hoặc 2
     }
 
+    // 2. Ẩn tất cả các trang, sau đó hiện trang mục tiêu với hiệu ứng mờ dần
+    $('.room-page').hide();
+    $('#page-' + currentPage).fadeIn(400);
+
+    // 3. Xóa class 'active' ở tất cả các số, thêm vào số hiện tại
+    $('.page-item').removeClass('active');
+    $('#btn-page-' + currentPage).addClass('active');
+
+    // 4. Xử lý trạng thái (Bật/Tắt) của nút 'Trước' và 'Sau'
+    if (currentPage === 1) {
+        $('#btn-prev').addClass('disabled');
+        $('#btn-next').removeClass('disabled');
+    } else if (currentPage === totalPages) {
+        $('#btn-prev').removeClass('disabled');
+        $('#btn-next').addClass('disabled');
+    } else {
+        // Nếu có nhiều hơn 2 trang (ví dụ ở trang 2 của 3 trang)
+        $('#btn-prev').removeClass('disabled');
+        $('#btn-next').removeClass('disabled');
+    }
     
-    // Cuộn màn hình lên đầu danh sách để người dùng dễ nhìn
+    // Tùy chọn: Cuộn mượt mà lên đầu danh sách phòng khi chuyển trang
     $('html, body').animate({
-        scrollTop: $(".row").offset().top - 100
+        scrollTop: $("#page-1").offset().top - 100 // Trừ 100px để không bị menu che lấp
     }, 500);
 }
