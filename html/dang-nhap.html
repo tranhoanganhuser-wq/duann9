@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập | Khách sạn IUH Luxury</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-light">
+
+    <div class="container py-5">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-5">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <a href="index.html" class="text-decoration-none">
+                                <h2 class="fw-bold"><span style="color: #b89552;">IUH</span> LUXURY</h2>
+                            </a>
+                            <p class="text-muted mt-2">Đăng nhập để quản lý đơn đặt phòng</p>
+                        </div>
+
+                        <form id="formLogin">
+                            <div class="mb-3">
+                                <label class="form-label">Email đăng nhập</label>
+                                <input type="email" id="loginEmail" class="form-control" placeholder="Nhập email của bạn" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mật khẩu</label>
+                                <input type="password" id="loginPass" class="form-control" placeholder="Nhập mật khẩu" required>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3 small">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input me-1"> Ghi nhớ tôi
+                                </label>
+                                <a href="#" class="text-decoration-none">Quên mật khẩu?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-2">Đăng Nhập</button>
+                        </form>
+
+                        <div id="loginError" class="alert alert-danger mt-3 d-none text-center small">
+                            Email hoặc mật khẩu không chính xác!
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <span class="text-muted small">Chưa có tài khoản? <a href="dang-ky.html">Đăng ký ngay</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#formLogin').on('submit', function(e) {
+                e.preventDefault(); // Chặn load lại trang
+                
+                let inputEmail = $('#loginEmail').val();
+                let inputPass = $('#loginPass').val();
+                
+                // Lấy dữ liệu từ LocalStorage (đã lưu ở file dang-ky.html)
+                let storedUser = JSON.parse(localStorage.getItem('registeredUser'));
+
+                if (storedUser && inputEmail === storedUser.email && inputPass === storedUser.pass) {
+                    $('#loginError').addClass('d-none');
+                    alert('Đăng nhập thành công! Chào mừng ' + storedUser.name);
+                    // Chuyển hướng về trang chủ
+                    window.location.href = 'index.html';
+                } else {
+                    // Hiển thị lỗi
+                    $('#loginError').removeClass('d-none');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

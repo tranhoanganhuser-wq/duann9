@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chi tiết Phòng Standard tại IUH Luxury Hotel">
+    <title>Phòng Standard | Khách sạn IUH Luxury</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span style="color: #b89552;">IUH</span> LUXURY
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="roomDropdown" data-bs-toggle="dropdown">Loại phòng</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="danh-sach-phong.html">Tất cả phòng</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item active" href="chi-tiet-phong-standard.html">Phòng Standard</a></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-deluxe.html">Phòng Deluxe</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="co-so-vat-chat.html">Cơ sở vật chất</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light" href="dang-nhap.html">Đăng nhập</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary" href="dat-phong.html">Giỏ hàng phòng</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-light py-3">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="danh-sach-phong.html" class="text-decoration-none text-muted">Loại phòng</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Phòng Standard</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <div id="roomGallery" class="carousel slide shadow-sm rounded overflow-hidden" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/room-standard.jpg" class="d-block w-100" alt="Phòng Standard Góc 1">
+                            </div>
+                            </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#roomGallery" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#roomGallery" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <h2 class="fw-bold mb-3">Phòng Standard (Tiêu chuẩn)</h2>
+                    <p class="text-danger display-6 fw-bold mb-4">1,200,000 VNĐ <span class="fs-5 text-muted fw-normal">/ đêm</span></p>
+                    
+                    <p class="text-muted">Phòng Standard mang đến không gian lưu trú thoải mái, hiện đại với thiết kế tinh tế. Đây là sự lựa chọn hoàn hảo cho những chuyến công tác ngắn ngày hoặc kỳ nghỉ tiết kiệm nhưng vẫn đảm bảo trải nghiệm dịch vụ 5 sao.</p>
+
+                    <h5 class="mt-4 mb-3">Tiện nghi nổi bật:</h5>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">🛏️</i> 1 Giường đôi cỡ lớn (Queen size)</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">📏</i> Diện tích: 25 m²</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">📶</i> Wi-Fi tốc độ cao miễn phí</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">📺</i> Smart TV 43 inch</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">🛁</i> Phòng tắm đứng với vòi sen hoa sen</li>
+                    </ul>
+
+                    <button onclick="addToCart('Phòng Standard', 1200000)" class="btn btn-primary btn-lg w-100 shadow-sm">
+                        Thêm vào đơn đặt phòng
+                    </button>
+                    <p class="small text-center text-muted mt-2">Không yêu cầu thanh toán ngay lập tức.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="text-center mt-3">
+                <p class="small mb-0">&copy; 2026 - Nhóm sinh viên thực hiện - Bài tập lớn Lập trình Web - IUH</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

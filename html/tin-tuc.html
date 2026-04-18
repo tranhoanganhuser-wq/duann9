@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cập nhật tin tức mới nhất và các chương trình khuyến mãi tại IUH Luxury Hotel">
+    <title>Tin tức & Khuyến mãi | Khách sạn IUH Luxury</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        /* Hiệu ứng hover cho thẻ tin tức */
+        .news-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+        .news-date {
+            color: var(--hotel-gold);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span style="color: #b89552;">IUH</span> LUXURY
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="roomDropdown" data-bs-toggle="dropdown">Loại phòng</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="danh-sach-phong.html">Tất cả phòng</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-standard.html">Phòng Standard</a></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-deluxe.html">Phòng Deluxe</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="co-so-vat-chat.html">Cơ sở vật chất</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tin-tuc.html">Tin tức</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light" href="dang-nhap.html">Đăng nhập</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary" href="dat-phong.html">Giỏ hàng</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-dark text-white text-center py-5" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/news-banner.jpg') center/cover;">
+        <div class="container">
+            <h1 class="display-4 fw-bold" style="color: var(--hotel-gold);">Tin Tức & Ưu Đãi</h1>
+            <p class="lead">Đừng bỏ lỡ những sự kiện đặc sắc và chương trình khuyến mãi hấp dẫn nhất.</p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            
+            <div class="card mb-5 border-0 shadow-sm overflow-hidden news-card">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="images/news-summer.jpg" class="img-fluid h-100" alt="Khuyến mãi mùa hè" style="object-fit: cover; min-height: 300px;">
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center">
+                        <div class="card-body p-md-5">
+                            <span class="badge bg-danger mb-2">Ưu đãi HOT</span>
+                            <p class="news-date mb-2"><i class="me-2">📅</i> 15/05/2026</p>
+                            <h2 class="card-title fw-bold mb-3">Chào Hè Rực Rỡ - Giảm Ngay 30% Khi Đặt Phòng Qua Website</h2>
+                            <p class="card-text text-muted">Mùa hè này, IUH Luxury Hotel mang đến cho bạn cơ hội tận hưởng kỳ nghỉ dưỡng trong mơ với mức giá cực kỳ ưu đãi. Giảm ngay 30% cho tất cả các hạng phòng khi đặt trực tiếp trên hệ thống website của chúng tôi. Tặng kèm voucher Spa trị giá 500.000 VNĐ.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Đọc tiếp →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm news-card">
+                        <img src="images/news-award.jpg" class="card-img-top" alt="Giải thưởng" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <span class="badge bg-secondary mb-2">Sự kiện</span>
+                            <p class="news-date mb-2"><i class="me-2">📅</i> 02/04/2026</p>
+                            <h5 class="card-title fw-bold">IUH Luxury lọt top 10 Khách sạn tốt nhất Sài Gòn</h5>
+                            <p class="card-text text-muted small">Chúng tôi vô cùng tự hào khi được vinh danh trong lễ trao giải Du lịch Việt Nam 2026. Đây là minh chứng cho sự nỗ lực không ngừng nghỉ của toàn bộ nhân viên.</p>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 pb-3">
+                            <a href="#" class="text-decoration-none" style="color: var(--hotel-gold);">Đọc tiếp →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm news-card">
+                        <img src="images/news-food.jpg" class="card-img-top" alt="Ẩm thực" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Ẩm thực</span>
+                            <p class="news-date mb-2"><i class="me-2">📅</i> 20/03/2026</p>
+                            <h5 class="card-title fw-bold">Khai mạc Tuần lễ Ẩm thực Hải sản Địa Trung Hải</h5>
+                            <p class="card-text text-muted small">Khám phá hương vị biển cả đích thực cùng đầu bếp 5 sao đến từ Ý. Thực đơn đặc biệt chỉ phục vụ vào các buổi tối thứ 6 và thứ 7 trong tháng này.</p>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 pb-3">
+                            <a href="#" class="text-decoration-none" style="color: var(--hotel-gold);">Đọc tiếp →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm news-card">
+                        <img src="images/news-wedding.jpg" class="card-img-top" alt="Tiệc cưới" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <span class="badge bg-info text-dark mb-2">Dịch vụ</span>
+                            <p class="news-date mb-2"><i class="me-2">📅</i> 10/03/2026</p>
+                            <h5 class="card-title fw-bold">Ra mắt gói Tiệc cưới "Endless Love" trọn gói 2026</h5>
+                            <p class="card-text text-muted small">Lưu giữ khoảnh khắc trọng đại nhất cuộc đời tại không gian phòng tiệc xa hoa bậc nhất. Gói dịch vụ bao gồm trang trí hoa tươi, MC và phòng tân hôn hạng Suite.</p>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 pb-3">
+                            <a href="#" class="text-decoration-none" style="color: var(--hotel-gold);">Đọc tiếp →</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <nav aria-label="Page navigation" class="mt-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Trước</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Sau</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </section>
+
+    <footer class="text-white py-5 mt-auto" style="background-color: #1a252f;">
+        <div class="container text-center mt-3">
+            <p class="small mb-0">&copy; 2026 - Nhóm sinh viên thực hiện - Bài tập lớn Lập trình Web - IUH</p>
+        </div>
+    </footer>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

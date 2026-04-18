@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Danh sách các loại phòng và bảng giá tại IUH Luxury Hotel">
+    <title>Danh sách phòng | Khách sạn IUH Luxury</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span style="color: #b89552;">IUH</span> LUXURY
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="roomDropdown" data-bs-toggle="dropdown">Loại phòng</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="danh-sach-phong.html">Tất cả phòng</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-standard.html">Phòng Standard</a></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-deluxe.html">Phòng Deluxe</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="co-so-vat-chat.html">Cơ sở vật chất</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light" href="dang-nhap.html">Đăng nhập</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary" href="dat-phong.html">Đặt phòng ngay</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-dark text-white text-center py-5" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/rooms-banner.jpg') center/cover;">
+        <div class="container">
+            <h1 class="display-4 fw-bold" style="color: var(--hotel-gold);">Hệ Thống Phòng Nghỉ</h1>
+            <p class="lead">Tận hưởng không gian sống sang trọng, tiện nghi và ấm cúng.</p>
+        </div>
+    </header>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="mb-0">Tất cả các phòng (6)</h3>
+                <select class="form-select w-auto">
+                    <option value="1">Sắp xếp theo giá: Thấp đến Cao</option>
+                    <option value="2">Sắp xếp theo giá: Cao đến Thấp</option>
+                    <option value="3">Phòng được yêu thích nhất</option>
+                </select>
+            </div>
+
+
+            // 6 phòng đầu
+            <div class="row g-4" id="row-page-1">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/room-standard.jpg" class="card-img-top" alt="Phòng Standard">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Phòng Standard (Tiêu chuẩn)</h5>
+                            <p class="text-danger fw-bold fs-5 mb-2">1,200,000 VNĐ <span class="text-muted fs-6 fw-normal">/ đêm</span></p>
+                            <p class="card-text text-muted flex-grow-1">Diện tích 25m², giường đôi lớn, đầy đủ tiện nghi cơ bản phù hợp cho khách công tác hoặc cặp đôi.</p>
+                            <div class="d-flex justify-content-between border-top pt-3 mt-3 text-muted small">
+                                <span><i class="text-warning">🛏️</i> 1 Giường đôi</span>
+                                <span><i class="text-warning">👤</i> 2 Người lớn</span>
+                                <span><i class="text-warning">📏</i> 25 m²</span>
+                            </div>
+                            <a href="chi-tiet-phong-standard.html" class="btn btn-outline-dark mt-3 w-100">Xem chi tiết & Đặt phòng</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/room-deluxe.jpg" class="card-img-top" alt="Phòng Deluxe">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Phòng Deluxe View Biển</h5>
+                            <p class="text-danger fw-bold fs-5 mb-2">2,500,000 VNĐ <span class="text-muted fs-6 fw-normal">/ đêm</span></p>
+                            <p class="card-text text-muted flex-grow-1">Không gian rộng rãi, ban công riêng với tầm nhìn hướng biển tuyệt đẹp. Bồn tắm nằm thư giãn.</p>
+                            <div class="d-flex justify-content-between border-top pt-3 mt-3 text-muted small">
+                                <span><i class="text-warning">🛏️</i> 1 Giường King</span>
+                                <span><i class="text-warning">👤</i> 2 Người lớn</span>
+                                <span><i class="text-warning">📏</i> 40 m²</span>
+                            </div>
+                            <a href="chi-tiet-phong-deluxe.html" class="btn btn-outline-dark mt-3 w-100">Xem chi tiết & Đặt phòng</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/room-twin.jpg" class="card-img-top" alt="Phòng Superior Twin">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Phòng Superior Twin</h5>
+                            <p class="text-danger fw-bold fs-5 mb-2">1,500,000 VNĐ <span class="text-muted fs-6 fw-normal">/ đêm</span></p>
+                            <p class="card-text text-muted flex-grow-1">Thiết kế hiện đại với 2 giường đơn riêng biệt, lý tưởng cho bạn bè hoặc đồng nghiệp đi du lịch cùng nhau.</p>
+                            <div class="d-flex justify-content-between border-top pt-3 mt-3 text-muted small">
+                                <span><i class="text-warning">🛏️</i> 2 Giường đơn</span>
+                                <span><i class="text-warning">👤</i> 2 Người lớn</span>
+                                <span><i class="text-warning">📏</i> 32 m²</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-dark mt-3 w-100">Xem chi tiết & Đặt phòng</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/room-family.jpg" class="card-img-top" alt="Phòng Family">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Phòng Gia Đình (Family)</h5>
+                            <p class="text-danger fw-bold fs-5 mb-2">3,200,000 VNĐ <span class="text-muted fs-6 fw-normal">/ đêm</span></p>
+                            <p class="card-text text-muted flex-grow-1">Phòng thông nhau hoặc 1 giường lớn + 1 giường nhỏ, tạo không gian sinh hoạt chung thoải mái cho gia đình.</p>
+                            <div class="d-flex justify-content-between border-top pt-3 mt-3 text-muted small">
+                                <span><i class="text-warning">🛏️</i> 1 King + 1 Đơn</span>
+                                <span><i class="text-warning">👨‍👩‍👧</i> 4 Người</span>
+                                <span><i class="text-warning">📏</i> 55 m²</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-dark mt-3 w-100">Xem chi tiết & Đặt phòng</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/room-exec.jpg" class="card-img-top" alt="Phòng Executive">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Phòng Executive Suite</h5>
+                            <p class="text-danger fw-bold fs-5 mb-2">4,800,000 VNĐ <span class="text-muted fs-6 fw-normal">/ đêm</span></p>
+                            <p class="card-text text-muted flex-grow-1">Có khu vực tiếp khách riêng biệt, đặc quyền sử dụng Executive Lounge với bữa sáng và cocktail miễn phí.</p>
+                            <div class="d-flex justify-content-between border-top pt-3 mt-3 text-muted small">
+                                <span><i class="text-warning">🛏️</i> 1 Giường King</span>
+                                <span><i class="text-warning">👤</i> 2 Người lớn</span>
+                                <span><i class="text-warning">📏</i> 70 m²</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-dark mt-3 w-100">Xem chi tiết & Đặt phòng</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/room-president.jpg" class="card-img-top" alt="Presidential Suite">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-warning">Presidential Suite</h5>
+                            <p class="text-danger fw-bold fs-5 mb-2">15,000,000 VNĐ <span class="text-muted fs-6 fw-normal">/ đêm</span></p>
+                            <p class="card-text text-muted flex-grow-1">Đỉnh cao của sự xa hoa với phòng khách siêu rộng, phòng ăn, quầy bar mini và quản gia phục vụ riêng 24/7.</p>
+                            <div class="d-flex justify-content-between border-top pt-3 mt-3 text-muted small">
+                                <span><i class="text-warning">🛏️</i> 2 Giường King</span>
+                                <span><i class="text-warning">👤</i> 4 Người lớn</span>
+                                <span><i class="text-warning">📏</i> 120 m²</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-dark mt-3 w-100">Xem chi tiết & Đặt phòng</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                            <div class="row g-4" id="row-page-2" style="display: none;">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/room-double.jpg" class="card-img-top" alt="Phòng Double">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Phòng Double (Trang 2)</h5>
+                            <p class="text-danger fw-bold fs-5 mb-2">1,500,000 VNĐ</p>
+                            <p class="card-text text-muted flex-grow-1">Nội dung mô tả phòng mới cho trang 2...</p>
+                            <a href="#" class="btn btn-outline-dark mt-3 w-100">Xem chi tiết & Đặt phòng</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+
+
+
+
+
+
+            </div> <nav aria-label="Page navigation" class="mt-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Trước</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Sau</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">IUH LUXURY HOTEL</h5>
+                    <p class="small text-secondary">Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, TP. Hồ Chí Minh.</p>
+                    <p class="small text-secondary">Điện thoại: (028) 38940 390</p>
+                </div>
+                <div class="col-md-4 mb-4 text-center">
+                    <h5 class="mb-3">Liên kết nhanh</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="gioi-thieu.html" class="text-secondary text-decoration-none">Giới thiệu</a></li>
+                        <li><a href="sitemap.html" class="text-secondary text-decoration-none">Sơ đồ website</a></li>
+                        <li><a href="tin-tuc.html" class="text-secondary text-decoration-none">Tin tức & Sự kiện</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 text-end">
+                    <h5 class="mb-3">Theo dõi chúng tôi</h5>
+                    <p class="small text-secondary">Kết nối qua các nền tảng mạng xã hội để nhận ưu đãi.</p>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center mt-3">
+                <p class="small mb-0">&copy; 2026 - Nhóm sinh viên thực hiện - Bài tập lớn Lập trình Web - IUH</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

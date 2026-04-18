@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký thành viên | Khách sạn IUH Luxury</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-light">
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold">Đăng Ký</h2>
+                            <p class="text-muted">Gia nhập thành viên IUH Luxury ngay hôm nay</p>
+                        </div>
+
+                        <form id="formRegister">
+                            <div class="mb-3">
+                                <label class="form-label">Họ và tên</label>
+                                <input type="text" id="regFullName" class="form-control" placeholder="Nhập họ tên đầy đủ" required>
+                                <div class="invalid-feedback" id="errName">Tên không được để trống và phải trên 2 ký tự.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" id="regEmail" class="form-control" placeholder="example@email.com" required>
+                                <div class="invalid-feedback" id="errEmail">Email không đúng định dạng.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mật khẩu</label>
+                                <input type="password" id="regPass" class="form-control" required>
+                                <div class="invalid-feedback" id="errPass">Mật khẩu phải từ 6 ký tự trở lên.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-2 mt-3">Đăng Ký Ngay</button>
+                        </form>
+
+                        <div class="text-center mt-4">
+                            <span class="text-muted small">Đã có tài khoản? <a href="dang-nhap.html">Đăng nhập</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="index.html" class="text-decoration-none text-muted small">← Quay lại Trang chủ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#formRegister').on('submit', function(e) {
+                e.preventDefault();
+                let isValid = true;
+                
+                // Reset errors
+                $('.form-control').removeClass('is-invalid');
+
+                // Validate Tên
+                if ($('#regFullName').val().length < 2) {
+                    $('#regFullName').addClass('is-invalid');
+                    isValid = false;
+                }
+
+                // Validate Email bằng Regex
+                let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test($('#regEmail').val())) {
+                    $('#regEmail').addClass('is-invalid');
+                    isValid = false;
+                }
+
+                // Validate Pass
+                if ($('#regPass').val().length < 6) {
+                    $('#regPass').addClass('is-invalid');
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    // Lưu thông tin vào LocalStorage để trang Đăng nhập có thể dùng
+                    let user = {
+                        name: $('#regFullName').val(),
+                        email: $('#regEmail').val(),
+                        pass: $('#regPass').val()
+                    };
+                    localStorage.setItem('registeredUser', JSON.stringify(user));
+                    
+                    alert('Đăng ký thành công! Bạn sẽ được chuyển đến trang Đăng nhập.');
+                    window.location.href = 'dang-nhap.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

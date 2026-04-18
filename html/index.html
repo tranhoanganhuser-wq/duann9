@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website giới thiệu khách sạn IUH Luxury - Trải nghiệm nghỉ dưỡng 5 sao">
+    <meta name="author" content="Nhóm Sinh Viên IUH">
+    <title>Trang chủ | Khách sạn IUH Luxury</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        /* CSS bổ sung nhanh cho trang chủ */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--hotel-gold);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span style="color: #b89552;">IUH</span> LUXURY
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="roomDropdown" data-bs-toggle="dropdown">Loại phòng</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="danh-sach-phong.html">Tất cả phòng</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-standard.html">Phòng Standard</a></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-deluxe.html">Phòng Deluxe</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="co-so-vat-chat.html">Cơ sở vật chất</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light" href="dang-nhap.html">Đăng nhập</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary" href="dat-phong.html">Đặt phòng ngay</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-3">Nghỉ Dưỡng Đẳng Cấp 5 Sao</h1>
+            <p class="lead mb-4">Chào mừng bạn đến với IUH Luxury Hotel - Nơi sự sang trọng hội tụ cùng lòng hiếu khách.</p>
+            <a href="danh-sach-phong.html" class="btn btn-primary btn-lg px-5">Khám phá ngay</a>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h2 class="mb-4">Tại sao nên chọn chúng tôi?</h2>
+                    <p class="text-muted">Với hơn 20 năm kinh nghiệm trong ngành dịch vụ khách sạn, chúng tôi cam kết mang đến cho quý khách những trải nghiệm khó quên nhất với hệ thống phòng nghỉ hiện đại và dịch vụ tận tâm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Phòng Nghỉ Nổi Bật</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/room-1.jpg" class="card-img-top" alt="Phòng Standard">
+                        <div class="card-body">
+                            <h5 class="card-title">Phòng Standard</h5>
+                            <p class="card-text text-muted">Diện tích 25m², đầy đủ tiện nghi cơ bản cho chuyến công tác.</p>
+                            <a href="chi-tiet-phong-standard.html" class="btn btn-outline-dark">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/room-2.jpg" class="card-img-top" alt="Phòng Deluxe">
+                        <div class="card-body">
+                            <h5 class="card-title">Phòng Deluxe Ocean View</h5>
+                            <p class="card-text text-muted">Tầm nhìn hướng biển tuyệt đẹp, phù hợp cho cặp đôi nghỉ dưỡng.</p>
+                            <a href="chi-tiet-phong-deluxe.html" class="btn btn-outline-dark">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/room-3.jpg" class="card-img-top" alt="Phòng Suite">
+                        <div class="card-body">
+                            <h5 class="card-title">Phòng Luxury Suite</h5>
+                            <p class="card-text text-muted">Đẳng cấp hoàng gia với phòng khách riêng và bồn tắm massage.</p>
+                            <a href="#" class="btn btn-outline-dark">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">IUH LUXURY HOTEL</h5>
+                    <p class="small text-secondary">Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, TP. Hồ Chí Minh.</p>
+                    <p class="small text-secondary">Điện thoại: (028) 38940 390</p>
+                </div>
+                <div class="col-md-4 mb-4 text-center">
+                    <h5 class="mb-3">Liên kết nhanh</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="gioi-thieu.html" class="text-secondary text-decoration-none">Giới thiệu</a></li>
+                        <li><a href="sitemap.html" class="text-secondary text-decoration-none">Sơ đồ website</a></li>
+                        <li><a href="tin-tuc.html" class="text-secondary text-decoration-none">Tin tức & Sự kiện</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 text-end">
+                    <h5 class="mb-3">Theo dõi chúng tôi</h5>
+                    <p class="small text-secondary">Kết nối qua các nền tảng mạng xã hội để nhận ưu đãi.</p>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center mt-3">
+                <p class="small mb-0">&copy; 2026 - Nhóm sinh viên thực hiện - Bài tập lớn Lập trình Web - IUH</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

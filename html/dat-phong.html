@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quản lý danh sách các phòng bạn đã chọn tại IUH Luxury Hotel">
+    <title>Đơn đặt phòng | Khách sạn IUH Luxury</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><span style="color: #b89552;">IUH</span> LUXURY</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="danh-sach-phong.html">Loại phòng</a></li>
+                    <li class="nav-item"><a class="nav-link" href="co-so-vat-chat.html">Cơ sở vật chất</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary active" href="dat-phong.html">Đơn đặt phòng</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-light py-5 text-center">
+        <div class="container">
+            <h1 class="fw-bold">Danh Sách Đặt Phòng</h1>
+            <p class="text-muted">Xem lại các lựa chọn của bạn trước khi tiến hành xác nhận.</p>
+        </div>
+    </div>
+
+    <section class="py-5">
+        <div class="container">
+            <div id="cartContent">
+                <div class="table-responsive shadow-sm rounded">
+                    <table class="table table-hover align-middle bg-white mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th class="ps-4">STT</th>
+                                <th>Loại Phòng</th>
+                                <th>Giá Tiền / Đêm</th>
+                                <th class="text-center">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartTable">
+                            </tbody>
+                    </table>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <a href="danh-sach-phong.html" class="btn btn-outline-dark">← Tiếp tục xem phòng</a>
+                        <button onclick="clearCart()" class="btn btn-outline-danger ms-2">Xóa tất cả</button>
+                    </div>
+                    <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                        <div class="card border-0 bg-light p-3 shadow-sm">
+                            <h4 class="mb-0">Tổng cộng: <span id="totalPrice" class="text-danger fw-bold">0</span> <small>VNĐ</small></h4>
+                            <hr>
+                            <a href="thanh-toan.html" id="btnCheckout" class="btn btn-success btn-lg disabled w-100">Tiến hành xác nhận</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="emptyCart" class="text-center py-5 d-none">
+                <div class="mb-4" style="font-size: 5rem;">🛒</div>
+                <h3>Bạn chưa chọn phòng nào!</h3>
+                <p class="text-muted mb-4">Hãy quay lại danh sách phòng để chọn cho mình một không gian ưng ý nhé.</p>
+                <a href="danh-sach-phong.html" class="btn btn-primary px-5">Xem danh sách phòng</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white py-4 mt-auto">
+        <div class="container text-center">
+            <p class="small mb-0">&copy; 2026 - Nhóm sinh viên thực hiện - Bài tập lớn Lập trình Web - IUH</p>
+        </div>
+    </footer>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            renderCart();
+        });
+
+        function renderCart() {
+            let cart = JSON.parse(localStorage.getItem('myCart')) || [];
+            let $table = $('#cartTable');
+            let total = 0;
+
+            if (cart.length === 0) {
+                $('#cartContent').addClass('d-none');
+                $('#emptyCart').removeClass('d-none');
+            } else {
+                $('#cartContent').removeClass('d-none');
+                $('#emptyCart').addClass('d-none');
+                $('#btnCheckout').removeClass('disabled');
+                
+                $table.empty();
+                cart.forEach((item, index) => {
+                    total += item.price;
+                    $table.append(`
+                        <tr>
+                            <td class="ps-4">${index + 1}</td>
+                            <td class="fw-bold">${item.name}</td>
+                            <td>${item.price.toLocaleString('vi-VN')} VNĐ</td>
+                            <td class="text-center">
+                                <button onclick="removeItem(${index})" class="btn btn-sm btn-outline-danger">Xóa</button>
+                            </td>
+                        </tr>
+                    `);
+                });
+                
+                $('#totalPrice').text(total.toLocaleString('vi-VN'));
+            }
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem('myCart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('myCart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function clearCart() {
+            if(confirm('Bạn có chắc muốn xóa tất cả các phòng đã chọn?')) {
+                localStorage.removeItem('myCart');
+                renderCart();
+            }
+        }
+    </script>
+</body>
+</html>
