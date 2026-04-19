@@ -38,6 +38,36 @@ $(document).ready(function() {
     }
 });
 
+
+$(document).ready(function() {
+    // Kiểm tra xem có ai ĐANG đăng nhập không (dùng key currentUser vừa tạo ở Bước 1)
+    let activeUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    if (activeUser) {
+        // NẾU ĐÃ ĐĂNG NHẬP:
+        $("#user-info").html("Chào mừng, " + activeUser.name); // Hiện tên
+        $("#btn-login").addClass("d-none");                     // Ẩn nút Đăng nhập
+        $("#btn-logout").removeClass("d-none");                 // Hiện nút Đăng xuất
+    } else {
+        // NẾU CHƯA ĐĂNG NHẬP:
+        $("#user-info").empty();                                // Xóa tên
+        $("#btn-login").removeClass("d-none");                  // Hiện nút Đăng nhập
+        $("#btn-logout").addClass("d-none");                    // Ẩn nút Đăng xuất
+    }
+
+    // XỬ LÝ NÚT ĐĂNG XUẤT
+    $("#btn-logout").on("click", function() {
+        // Xóa trạng thái đang đăng nhập
+        localStorage.removeItem('currentUser'); 
+        alert("Bạn đã đăng xuất!");
+        // Load lại trang để giao diện quay về như cũ
+        window.location.reload(); 
+    });
+});
+
+
+
+
 // Hàm chuyển trang
 // Biến lưu trữ trang hiện tại
 let currentPage = 1;
