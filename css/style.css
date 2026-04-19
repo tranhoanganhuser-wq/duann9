@@ -1,0 +1,134 @@
+:root {
+    --hotel-gold: #3d91ff;      
+    --hotel-gold-hover: #3d91ff; 
+    --hotel-dark: #173a5a;       
+    --hotel-bg-light: #f8f9fa;   
+}
+
+/* 2. THIẾT LẬP CHUNG (Cơ bản) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--hotel-bg-light);
+    color: #333;
+}
+
+
+.text-justify {
+    text-align: justify;
+}
+
+/* 3. THANH ĐIỀU HƯỚNG (HEADER / NAVBAR) */
+.navbar {
+    background-color: var(--hotel-dark) !important;
+    border-bottom: 3px solid var(--hotel-gold); 
+
+.navbar-brand {
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--hotel-gold) !important;
+}
+
+
+.btn-primary {
+    background-color: var(--hotel-gold) !important;
+    border-color: var(--hotel-gold) !important;
+    color: #fff !important;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--hotel-gold-hover) !important;
+    border-color: var(--hotel-gold-hover) !important;
+    transform: translateY(-2px); /* Hiệu ứng nảy lên nhẹ */
+    box-shadow: 0 4px 8px rgba(184, 149, 82, 0.4) !important;
+}
+
+
+.btn-outline-dark {
+    border-color: var(--hotel-dark);
+    color: var(--hotel-dark);
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--hotel-dark);
+    color: #fff;
+}
+
+
+.card {
+    border-radius: 8px;
+    overflow: hidden; 
+    transition: all 0.3s ease;
+}
+
+.card:hover, .news-card:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    transform: translateY(-8px);
+    cursor: pointer;
+}
+
+.facility-img {
+    transition: transform 0.4s ease;
+    border-radius: 8px;
+}
+
+.facility-img:hover {
+    transform: scale(1.03);
+}
+
+.pagination .page-link {
+    color: var(--hotel-dark);
+    border: 1px solid #dee2e6;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--hotel-gold);
+    border-color: var(--hotel-gold);
+    color: #fff;
+}
+
+.pagination .page-link:hover {
+    background-color: var(--hotel-gold-hover);
+    color: #fff;
+}
+
+/* 7. CHÂN TRANG (FOOTER) */
+footer {
+    background-color: var(--hotel-dark);
+    color: #d1d1d1;
+    border-top: 4px solid var(--hotel-gold);
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--hotel-gold) !important;
+    text-decoration: underline !important;
+}
+
+/* 8. TÙY CHỈNH RESPONSIVE (Dành cho điện thoại di động) */
+@media (max-width: 768px) {
+    .display-3, .display-4 {
+        font-size: 2.5rem; 
+    }
+    .hero-section {
+        height: 60vh !important; 
+    }
+    .card:hover {
+        transform: none; 
+    }
+}
