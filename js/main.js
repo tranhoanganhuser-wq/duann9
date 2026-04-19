@@ -18,6 +18,48 @@ $(document).ready(function() {
     });
 });
 
+
+// --- BẮT ĐẦU: XỬ LÝ GIAO DIỆN KHI ĐÃ ĐĂNG NHẬP ---
+let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+if (currentUser) {
+    // 1. Tìm thẻ <li> chứa nút Đăng nhập (dựa vào href)
+    let loginMenuItem = $('a[href="dang-nhap.html"]').parent();
+    
+    // 2. Thay thế nút "Đăng nhập" thành Dropdown thông tin User
+    loginMenuItem.html(`
+        <div class="dropdown">
+            <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                👤 Chào, ${currentUser.name}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow">
+                <li><a class="dropdown-item" href="#">Hồ sơ của tôi</a></li>
+                <li><a class="dropdown-item" href="dat-phong.html">Đơn đặt phòng</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item text-danger fw-bold" href="#" onclick="logoutUser()">Đăng xuất</a></li>
+            </ul>
+        </div>
+    `);
+
+    // 3. (Tuỳ chọn) Nếu user đang ở trang đăng nhập/đăng ký mà đã login rồi thì đá về trang chủ
+    let currentUrl = window.location.href;
+    if (currentUrl.includes('dang-nhap.html') || currentUrl.includes('dang-ky.html')) {
+        window.location.href = 'index.html';
+    }
+}
+// --- KẾT THÚC: XỬ LÝ GIAO DIỆN ---
+
+// --- HÀM ĐĂNG XUẤT ---
+window.logoutUser = function() {
+    if(confirm('Bạn có chắc chắn muốn đăng xuất không?')) {
+        // Xóa thông tin user đang đăng nhập (nhưng không xóa tài khoản đã đăng ký)
+        localStorage.removeItem('currentUser');
+        
+        // Load lại trang web để menu quay về như cũ
+        window.location.reload();
+    }
+}
+
 // Xử lý Giỏ hàng
 // Lưu sản phẩm vào giỏ
 function addToCart(productName, price) {
@@ -37,34 +79,6 @@ $(document).ready(function() {
         $("#user-info").html("Chào mừng, " + currentUser);
     }
 });
-
-
-$(document).ready(function() {
-    // Kiểm tra xem có ai ĐANG đăng nhập không (dùng key currentUser vừa tạo ở Bước 1)
-    let activeUser = JSON.parse(localStorage.getItem('currentUser'));
-
-    if (activeUser) {
-        // NẾU ĐÃ ĐĂNG NHẬP:
-        $("#user-info").html("Chào mừng, " + activeUser.name); // Hiện tên
-        $("#btn-login").addClass("d-none");                     // Ẩn nút Đăng nhập
-        $("#btn-logout").removeClass("d-none");                 // Hiện nút Đăng xuất
-    } else {
-        // NẾU CHƯA ĐĂNG NHẬP:
-        $("#user-info").empty();                                // Xóa tên
-        $("#btn-login").removeClass("d-none");                  // Hiện nút Đăng nhập
-        $("#btn-logout").addClass("d-none");                    // Ẩn nút Đăng xuất
-    }
-
-    // XỬ LÝ NÚT ĐĂNG XUẤT
-    $("#btn-logout").on("click", function() {
-        // Xóa trạng thái đang đăng nhập
-        localStorage.removeItem('currentUser'); 
-        alert("Bạn đã đăng xuất!");
-        // Load lại trang để giao diện quay về như cũ
-        window.location.reload(); 
-    });
-});
-
 
 
 

@@ -55,27 +55,49 @@
 
     <script src="../js/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#formLogin').on('submit', function(e) {
-                e.preventDefault(); // Chặn load lại trang
+        // $(document).ready(function() {
+        //     $('#formLogin').on('submit', function(e) {
+        //         e.preventDefault(); // Chặn load lại trang
                 
-                let inputEmail = $('#loginEmail').val();
-                let inputPass = $('#loginPass').val();
+        //         let inputEmail = $('#loginEmail').val();
+        //         let inputPass = $('#loginPass').val();
                 
-                // Lấy dữ liệu từ LocalStorage (đã lưu ở file dang-ky.html)
-                let storedUser = JSON.parse(localStorage.getItem('registeredUser'));
+        //         // Lấy dữ liệu từ LocalStorage (đã lưu ở file dang-ky.html)
+        //         let storedUser = JSON.parse(localStorage.getItem('registeredUser'));
 
-                if (storedUser && inputEmail === storedUser.email && inputPass === storedUser.pass) {
-                    $('#loginError').addClass('d-none');
-                    alert('Đăng nhập thành công! Chào mừng ' + storedUser.name);
-                    // Chuyển hướng về trang chủ
-                    window.location.href = 'index.html';
-                } else {
-                    // Hiển thị lỗi
-                    $('#loginError').removeClass('d-none');
-                }
-            });
-        });
+        //         if (storedUser && inputEmail === storedUser.email && inputPass === storedUser.pass) {
+        //             $('#loginError').addClass('d-none');
+        //             alert('Đăng nhập thành công! Chào mừng ' + storedUser.name);
+        //             // Chuyển hướng về trang chủ
+        //             window.location.href = 'index.html';
+        //         } else {
+        //             // Hiển thị lỗi
+        //             $('#loginError').removeClass('d-none');
+        //         }
+        //     });
+        // });
+        $(document).ready(function() {
+    $('#formLogin').on('submit', function(e) {
+        e.preventDefault(); 
+        
+        let inputEmail = $('#loginEmail').val();
+        let inputPass = $('#loginPass').val();
+        
+        let storedUser = JSON.parse(localStorage.getItem('registeredUser'));
+
+        if (storedUser && inputEmail === storedUser.email && inputPass === storedUser.pass) {
+            $('#loginError').addClass('d-none');
+            
+            // --- NEW: Lưu trạng thái "Đã đăng nhập" vào LocalStorage ---
+            localStorage.setItem('currentUser', JSON.stringify(storedUser));
+            
+            alert('Đăng nhập thành công! Chào mừng ' + storedUser.name);
+            window.location.href = 'index.html'; // Chuyển về trang chủ
+        } else {
+            $('#loginError').removeClass('d-none');
+        }
+    });
+});
     </script>
 </body>
 </html>
