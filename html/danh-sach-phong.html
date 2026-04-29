@@ -31,6 +31,8 @@
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="chi-tiet-phong-standard.html">Phòng Standard</a></li>
                             <li><a class="dropdown-item" href="chi-tiet-phong-deluxe.html">Phòng Deluxe</a></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-superior.html">Phòng Superior</a></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-suite.html">Phòng Suite</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="co-so-vat-chat.html">Cơ sở vật chất</a></li>
@@ -57,10 +59,10 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h3 class="mb-0">Tất cả các phòng (12)</h3>
-                <select class="form-select w-auto">
-                    <option value="1">Sắp xếp theo giá: Thấp đến Cao</option>
-                    <option value="2">Sắp xếp theo giá: Cao đến Thấp</option>
-                    <option value="3">Phòng được yêu thích nhất</option>
+                <select id="sortRooms" class="form-select w-auto" onchange="sortRoomsByPrice()">
+                    <option value="default">Sắp xếp mặc định</option>
+                    <option value="1">Giá: Thấp đến Cao</option>
+                    <option value="2">Giá: Cao đến Thấp</option>
                 </select>
             </div>
 
@@ -114,7 +116,7 @@
                                 <span><i class="text-warning">👤</i> 2 Người lớn</span>
                                 <span><i class="text-warning">📏</i> 32 m²</span>
                             </div>
-                            <a href="#" class="btn btn-outline-dark mt-3 w-100">Xem chi tiết & Đặt phòng</a>
+                            <a href="chi-tiet-phong-superior.html" class="btn btn-outline-dark mt-3 w-100">Xem chi tiết & Đặt phòng</a>
                         </div>
                     </div>
                 </div>
@@ -148,7 +150,7 @@
                                 <span><i class="text-warning">👤</i> 2 Người lớn</span>
                                 <span><i class="text-warning">📏</i> 70 m²</span>
                             </div>
-                            <a href="#" class="btn btn-outline-dark mt-3 w-100">Xem chi tiết & Đặt phòng</a>
+                            <a href="chi-tiet-phong-suite.html" class="btn btn-outline-dark mt-3 w-100">Xem chi tiết & Đặt phòng</a>
                         </div>
                     </div>
                 </div>
@@ -165,7 +167,7 @@
                                 <span><i class="text-warning">👤</i> 4 Người lớn</span>
                                 <span><i class="text-warning">📏</i> 120 m²</span>
                             </div>
-                            <a href="#" class="btn btn-outline-dark mt-3 w-100">Xem chi tiết & Đặt phòng</a>
+                            <a href="chi-tiet-phong-suite.html" class="btn btn-outline-dark mt-3 w-100">Xem chi tiết & Đặt phòng</a>
                         </div>
                     </div>
                 </div>
@@ -307,7 +309,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <h5 class="mb-3">IUH LUXURY HOTEL</h5>
+                    <h5 class="text-black mb-3">IUH LUXURY HOTEL</h5>
                     <p class="small text-secondary">Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, TP. Hồ Chí Minh.</p>
                     <p class="small text-secondary">Điện thoại: (028) 38940 390</p>
                 </div>
