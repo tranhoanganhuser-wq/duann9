@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,11 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand navbar-dark sticky-top shadow-sm" style="background-color: #45b2ff;">
-        
+
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html"><span style="color: #b89552;">IUH</span> LUXURY</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
@@ -22,11 +24,25 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
                     <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="danh-sach-phong.html">Loại phòng</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="roomDropdown"
+                            data-bs-toggle="dropdown">Loại phòng</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="danh-sach-phong.html">Tất cả phòng</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-standard.html">Phòng Standard</a></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-deluxe.html">Phòng Deluxe</a></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-superior.html">Phòng Superior</a></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-suite.html">Phòng Suite</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="co-so-vat-chat.html">Cơ sở vật chất</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tin-tuc.html">Tin tức</a></li>
                     <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
                     <li class="nav-item ms-lg-2">
-                        <a class="btn btn-primary active" href="dat-phong.html">Đơn đặt phòng</a>
+                        <a class="btn btn-primary active" href="dat-phong.html">Giỏ hàng phòng</a>
                     </li>
                 </ul>
             </div>
@@ -54,7 +70,7 @@
                             </tr>
                         </thead>
                         <tbody id="cartTable">
-                            </tbody>
+                        </tbody>
                     </table>
                 </div>
 
@@ -65,9 +81,11 @@
                     </div>
                     <div class="col-md-6 text-md-end mt-3 mt-md-0">
                         <div class="card border-0 bg-light p-3 shadow-sm">
-                            <h4 class="mb-0">Tổng cộng: <span id="totalPrice" class="text-danger fw-bold">0</span> <small>VNĐ</small></h4>
+                            <h4 class="mb-0">Tổng cộng: <span id="totalPrice" class="text-danger fw-bold">0</span>
+                                <small>VNĐ</small></h4>
                             <hr>
-                            <a href="thanh-toan.html" id="btnCheckout" class="btn btn-success btn-lg disabled w-100">Tiến hành xác nhận</a>
+                            <a href="thanh-toan.html" id="btnCheckout"
+                                class="btn btn-success btn-lg disabled w-100">Tiến hành xác nhận</a>
                         </div>
                     </div>
                 </div>
@@ -91,9 +109,9 @@
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/main.js"></script>
-    
+
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             renderCart();
         });
 
@@ -109,7 +127,7 @@
                 $('#cartContent').removeClass('d-none');
                 $('#emptyCart').addClass('d-none');
                 $('#btnCheckout').removeClass('disabled');
-                
+
                 $table.empty();
                 cart.forEach((item, index) => {
                     total += item.price;
@@ -124,7 +142,7 @@
                         </tr>
                     `);
                 });
-                
+
                 $('#totalPrice').text(total.toLocaleString('vi-VN'));
             }
         }
@@ -137,11 +155,12 @@
         }
 
         function clearCart() {
-            if(confirm('Bạn có chắc muốn xóa tất cả các phòng đã chọn?')) {
+            if (confirm('Bạn có chắc muốn xóa tất cả các phòng đã chọn?')) {
                 localStorage.removeItem('myCart');
                 renderCart();
             }
         }
     </script>
 </body>
+
 </html>

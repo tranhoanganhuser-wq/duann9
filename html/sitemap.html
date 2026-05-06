@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,15 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand navbar-dark sticky-top shadow-sm" style="background-color: #45b2ff;">
-        
+
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html"><span style="color: #b89552;">IUH</span> LUXURY</a>
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span style="color: #b89552;">IUH</span> LUXURY
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -20,8 +24,29 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
                     <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="danh-sach-phong.html">Loại phòng</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="roomDropdown" data-bs-toggle="dropdown">Loại
+                            phòng</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="danh-sach-phong.html">Tất cả phòng</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-standard.html">Phòng Standard</a></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-deluxe.html">Phòng Deluxe</a></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-superior.html">Phòng Superior</a></li>
+                            <li><a class="dropdown-item" href="chi-tiet-phong-suite.html">Phòng Suite</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="co-so-vat-chat.html">Cơ sở vật chất</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tin-tuc.html">Tin tức</a></li>
                     <li class="nav-item"><a class="nav-link active" href="sitemap.html">Sitemap</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light" href="dang-nhap.html">Đăng nhập</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary" href="dat-phong.html">Giỏ hàng phòng</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -30,12 +55,13 @@
     <section class="py-5">
         <div class="container">
             <h2 class="text-center fw-bold mb-5">Sơ Đồ Cấu Trúc Website</h2>
-            
+
             <div class="row justify-content-center">
                 <div class="col-md-10 text-center">
                     <div class="border p-3 bg-light shadow-sm mb-5 rounded">
                         <img src="../images/sitemap-diagram.png" alt="Sơ đồ cây cấu trúc website" class="img-fluid">
-                        <p class="text-muted mt-2 small"><i>Hình 1: Sơ đồ mối quan hệ giữa các trang trong hệ thống</i></p>
+                        <p class="text-muted mt-2 small"><i>Hình 1: Sơ đồ mối quan hệ giữa các trang trong hệ thống</i>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -52,7 +78,8 @@
                                 <li><a href="gioi-thieu.html">Giới thiệu (gioi-thieu.html)</a></li>
                                 <li>Loại phòng
                                     <ul>
-                                        <li><a href="danh-sach-phong.html">Danh sách phòng (danh-sach-phong.html)</a></li>
+                                        <li><a href="danh-sach-phong.html">Danh sách phòng (danh-sach-phong.html)</a>
+                                        </li>
                                         <li><a href="chi-tiet-phong-standard.html">Chi tiết phòng Standard</a></li>
                                         <li><a href="chi-tiet-phong-deluxe.html">Chi tiết phòng Deluxe</a></li>
                                         <li><a href="chi-tiet-phong-superior.html">Phòng Superior</a></li>
@@ -78,12 +105,38 @@
         </div>
     </section>
 
-    <footer class="text-white py-4 mt-auto" style="background-color: #1a252f;">
-        <div class="container text-center">
-            <p class="small mb-0">&copy; 2026 - Nhóm sinh viên thực hiện - Bài tập lớn Lập trình Web - IUH</p>
+    <footer class="text-black py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-black mb-3">IUH LUXURY HOTEL</h5>
+                    <p class="small text-secondary">Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, TP. Hồ Chí Minh.</p>
+                    <p class="small text-secondary">Điện thoại: (089) 8712 355</p>
+                </div>
+                <div class="col-md-4 mb-4 text-center">
+                    <h5 class="mb-3">Liên kết nhanh</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="gioi-thieu.html" class="text-secondary text-decoration-none">Giới thiệu</a></li>
+                        <li><a href="sitemap.html" class="text-secondary text-decoration-none">Sơ đồ website</a></li>
+                        <li><a href="tin-tuc.html" class="text-secondary text-decoration-none">Tin tức & Sự kiện</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 text-end">
+                    <h5 class="mb-3">Theo dõi chúng tôi</h5>
+                    <p class="small text-secondary">Kết nối qua các nền tảng mạng xã hội để nhận ưu đãi.</p>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center mt-3">
+                <p class="small mb-0">&copy; 2026 - Nhóm sinh viên thực hiện - Bài tập lớn Lập trình Web - IUH</p>
+            </div>
         </div>
     </footer>
 
+    <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
 </body>
+
 </html>

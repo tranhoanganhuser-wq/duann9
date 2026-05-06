@@ -85,6 +85,7 @@ $(document).ready(function () {
     let currentUser = localStorage.getItem("username");
     if (currentUser) {
         $("#user-info").html("Chào mừng, " + currentUser);
+        
     }
 });
 
@@ -133,6 +134,8 @@ window.changePage = function (page) {
     }, 500);
 }
 
+
+// --- HÀM SẮP XẾP THEO GIÁ ---
 function sortRoomsByPrice() {
     let sortType = $('#sortRooms').val();
     if (sortType === 'default') return;
@@ -171,3 +174,33 @@ function sortRoomsByPrice() {
         changePage(1);
     }
 }
+
+
+// --- HÀM THÊM VÀO GIỎ VÀ CHUYỂN TRANG ĐẶT PHÒNG(CÓ KIỂM TRA ĐĂNG NHẬP) ---
+window.datPhongNgay = function(productName, price) {
+    // 1. Kiểm tra trạng thái đăng nhập
+    // (Kiểm tra xem 'currentUser' hoặc 'username' đã có trong máy chưa)
+    let isLogined = localStorage.getItem('currentUser') || localStorage.getItem('username');
+
+    if (!isLogined) {
+        // Nếu chưa đăng nhập -> Hiện thông báo
+        alert("Bạn cần đăng nhập để thực hiện chức năng đặt phòng!");
+        
+        // Nhấn OK xong -> Chuyển hướng đến trang đăng nhập
+        window.location.href = "dang-nhap.html"; 
+        
+        return; // Lệnh này rất quan trọng: Dừng hàm ngay lập tức, không chạy phần code bên dưới
+    }
+
+    // 2. Nếu ĐÃ đăng nhập thành công -> Xử lý lưu phòng và chuyển sang thanh toán
+    let cart = JSON.parse(localStorage.getItem('myCart')) || [];
+    
+    cart.push({
+        name: productName,
+        price: price
+    });
+    
+    localStorage.setItem("myCart", JSON.stringify(cart));
+    
+    window.location.href = "dat-phong.html";
+};

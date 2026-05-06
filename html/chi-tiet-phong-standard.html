@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,11 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand navbar-dark sticky-top shadow-sm" style="background-color: #45b2ff;">
-        
+
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
                 <span style="color: #b89552;">IUH</span> LUXURY
@@ -25,17 +27,22 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
                     <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="roomDropdown" data-bs-toggle="dropdown">Loại phòng</a>
+                        <a class="nav-link dropdown-toggle active" href="#" id="roomDropdown"
+                            data-bs-toggle="dropdown">Loại phòng</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="danh-sach-phong.html">Tất cả phòng</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item active" href="chi-tiet-phong-standard.html">Phòng Standard</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item active" href="chi-tiet-phong-standard.html">Phòng Standard</a>
+                            </li>
                             <li><a class="dropdown-item" href="chi-tiet-phong-deluxe.html">Phòng Deluxe</a></li>
                             <li><a class="dropdown-item" href="chi-tiet-phong-superior.html">Phòng Superior</a></li>
                             <li><a class="dropdown-item" href="chi-tiet-phong-suite.html">Phòng Suite</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="co-so-vat-chat.html">Cơ sở vật chất</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tin-tuc.html">Tin tức</a></li>
                     <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
                     <li class="nav-item ms-lg-3">
                         <a class="btn btn-outline-light" href="dang-nhap.html">Đăng nhập</a>
@@ -52,8 +59,10 @@
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Trang chủ</a></li>
-                    <li class="breadcrumb-item"><a href="danh-sach-phong.html" class="text-decoration-none text-muted">Loại phòng</a></li>
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Trang
+                            chủ</a></li>
+                    <li class="breadcrumb-item"><a href="danh-sach-phong.html"
+                            class="text-decoration-none text-muted">Loại phòng</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Phòng Standard</li>
                 </ol>
             </nav>
@@ -64,42 +73,122 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 mb-4 mb-lg-0">
-                    <div id="roomGallery" class="carousel slide shadow-sm rounded overflow-hidden" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="../images/room-standard.jpg" class="d-block w-100" alt="Phòng Standard Góc 1">
-                            </div>
-                            </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#roomGallery" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#roomGallery" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                    <div id="roomGallery" class="shadow-sm rounded overflow-hidden">
+                        <img src="../images/room-standard.jpg" class="d-block w-100">
                     </div>
                 </div>
 
                 <div class="col-lg-5">
                     <h2 class="fw-bold mb-3">Phòng Standard (Tiêu chuẩn)</h2>
-                    <p class="text-danger display-6 fw-bold mb-4">1,200,000 VNĐ <span class="fs-5 text-muted fw-normal">/ đêm</span></p>
-                    
-                    <p class="text-muted">Phòng Standard mang đến không gian lưu trú thoải mái, hiện đại với thiết kế tinh tế. Đây là sự lựa chọn hoàn hảo cho những chuyến công tác ngắn ngày hoặc kỳ nghỉ tiết kiệm nhưng vẫn đảm bảo trải nghiệm dịch vụ 5 sao.</p>
+                    <p class="text-danger display-6 fw-bold mb-4">1,200,000 VNĐ <span
+                            class="fs-5 text-muted fw-normal">/ đêm</span></p>
+
+                    <p class="text-muted">Phòng Standard mang đến không gian lưu trú thoải mái, hiện đại với thiết kế
+                        tinh tế. Đây là sự lựa chọn hoàn hảo cho những chuyến công tác ngắn ngày hoặc kỳ nghỉ tiết kiệm
+                        nhưng vẫn đảm bảo trải nghiệm dịch vụ 5 sao.</p>
 
                     <h5 class="mt-4 mb-3">Tiện nghi nổi bật:</h5>
                     <ul class="list-group list-group-flush mb-4">
-                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">🛏️</i> 1 Giường đôi cỡ lớn (Queen size)</li>
-                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">📏</i> Diện tích: 25 m²</li>
-                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">📶</i> Wi-Fi tốc độ cao miễn phí</li>
-                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">📺</i> Smart TV 43 inch</li>
-                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">🛁</i> Phòng tắm đứng với vòi sen hoa sen</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">🛏️</i> 1
+                            Giường đôi cỡ lớn (Queen size)</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">📏</i> Diện
+                            tích: 25 m²</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">📶</i> Wi-Fi
+                            tốc độ cao miễn phí</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">📺</i> Smart
+                            TV 43 inch</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">🛁</i> Phòng
+                            tắm đứng với vòi sen hoa sen</li>
                     </ul>
 
-                    <button onclick="addToCart('Phòng Standard', 1200000)" class="btn btn-primary btn-lg w-100 shadow-sm">
+                    <button onclick="addToCart('Phòng Standard', 1200000)"
+                        class="btn btn-primary btn-lg w-100 shadow-sm">
                         Thêm vào đơn đặt phòng
                     </button>
-                    <p class="small text-center text-muted mt-2">Không yêu cầu thanh toán ngay lập tức.</p>
+                </div>
+            </div>
+            <br> <br> <br>
+
+            <div class="row">
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <div id="roomGallery" class="shadow-sm rounded overflow-hidden">
+                        <img src="../images/room-family.jpg" class="d-block w-100">
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h2 class="fw-bold mb-0">Phòng Gia Đình (Family)</h2>
+                    </div>
+
+                    <p class="text-danger display-6 fw-bold mb-4">3,200,000 VNĐ <span
+                            class="fs-5 text-muted fw-normal">/ đêm</span></p>
+
+                    <p class="text-muted">Phòng Gia Đình được thiết kế thông minh với không gian kết nối, bao gồm một
+                        giường lớn và một giường nhỏ riêng biệt được ngăn cách tinh tế. Đây là sự lựa chọn hoàn hảo để
+                        tạo nên không gian sinh hoạt chung ấm cúng nhưng vẫn đảm bảo sự riêng tư cần thiết, giúp mọi
+                        thành viên trong gia đình tận hưởng kỳ nghỉ thoải mái nhất.</p>
+
+                    <h5 class="mt-4 mb-3">Tiện nghi đẳng cấp:</h5>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">🛏️</i> 1
+                            Giường King + 1 Giường Đơn</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">📏</i> Diện
+                            tích: 55 m² - Thiết kế thông nhau</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">🌳</i> View
+                            hướng công viên xanh mát</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">📺</i> 2
+                            Smart TV riêng biệt cho mỗi khu vực</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">🚿</i> Phòng
+                            tắm rộng rãi với đầy đủ tiện nghi</li>
+                    </ul>
+
+                    <button onclick="addToCart('Phòng Family', 3200000)"
+                        class="btn btn-primary btn-lg w-100 shadow-sm">
+                        Thêm vào đơn đặt phòng
+                    </button>
+                </div>
+            </div>
+            <br> <br> <br>
+
+            <div class="row">
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <div id="roomGallery" class="shadow-sm rounded overflow-hidden">
+                        <img src="../images/room-premier.jpg" class="d-block w-100">
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h2 class="fw-bold mb-0">Phòng Premier City View</h2>
+                    </div>
+
+                    <p class="text-danger display-6 fw-bold mb-4">1,800,000 VNĐ <span
+                            class="fs-5 text-muted fw-normal">/ đêm</span></p>
+
+                    <p class="text-muted">Tọa lạc tại các tầng cao của khách sạn, phòng Premier City View sở hữu cửa sổ
+                        kính chạm trần tinh tế, mang đến tầm nhìn panorama toàn cảnh thành phố nhộn nhịp. Đây là không
+                        gian lý tưởng để tận hưởng vẻ đẹp lung linh của đô thị về đêm trong một không gian lãng mạn và
+                        hiện đại.</p>
+
+                    <h5 class="mt-4 mb-3">Tiện nghi đẳng cấp:</h5>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">🛏️</i> 1
+                            Giường King cao cấp</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">📏</i> Diện
+                            tích: 35 m²</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">🌃</i> View
+                            thành phố toàn cảnh (City View)</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">📺</i> Smart
+                            TV giải trí đa phương tiện</li>
+                        <li class="list-group-item bg-transparent text-muted"><i class="text-warning me-2">🍷</i> Khu
+                            vực trà & cà phê thư giãn bên cửa sổ</li>
+                    </ul>
+
+                    <button onclick="addToCart('Phòng Premier City View', 1800000)"
+                        class="btn btn-primary btn-lg w-100 shadow-sm">
+                        Thêm vào đơn đặt phòng
+                    </button>
                 </div>
             </div>
         </div>
@@ -117,4 +206,5 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/main.js"></script>
 </body>
+
 </html>
